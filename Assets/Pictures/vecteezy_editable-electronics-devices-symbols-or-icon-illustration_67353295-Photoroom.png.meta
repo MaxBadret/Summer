@@ -231,11 +231,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 100
-        y: 629
-        width: 47
-        height: 23
+        y: 590
+        width: 49
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -257,7 +257,7 @@ TextureImporter:
         width: 150
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -271,37 +271,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vecteezy_editable-electronics-devices-symbols-or-icon-illustration_67353295-Photoroom_2
-      rect:
-        serializedVersion: 2
-        x: 486
-        y: 578
-        width: 35
-        height: 86
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ace701ec736cb9750800000000000000
-      internalID: 6312857245672570570
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: vecteezy_editable-electronics-devices-symbols-or-icon-illustration_67353295-Photoroom_3
       rect:
         serializedVersion: 2
-        x: 530
+        x: 485
         y: 578
-        width: 35
+        width: 80
         height: 86
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -323,7 +301,7 @@ TextureImporter:
         width: 57
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -345,7 +323,7 @@ TextureImporter:
         width: 91
         height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -367,7 +345,7 @@ TextureImporter:
         width: 115
         height: 110
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -381,72 +359,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vecteezy_editable-electronics-devices-symbols-or-icon-illustration_67353295-Photoroom_7
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 612
-        width: 47
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 69abf0ee4d5349400800000000000000
-      internalID: 329947861348235926
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: vecteezy_editable-electronics-devices-symbols-or-icon-illustration_67353295-Photoroom_8
-      rect:
-        serializedVersion: 2
-        x: 110
-        y: 620
-        width: 28
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 343b64d7ce4c81980800000000000000
-      internalID: -8567881771079257277
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: vecteezy_editable-electronics-devices-symbols-or-icon-illustration_67353295-Photoroom_9
-      rect:
-        serializedVersion: 2
-        x: 110
-        y: 590
-        width: 28
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ce811b9ad2c33a9e0800000000000000
-      internalID: -1611378074850354964
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: vecteezy_editable-electronics-devices-symbols-or-icon-illustration_67353295-Photoroom_10
       rect:
         serializedVersion: 2
@@ -455,7 +367,7 @@ TextureImporter:
         width: 56
         height: 67
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -477,7 +389,7 @@ TextureImporter:
         width: 78
         height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -499,7 +411,7 @@ TextureImporter:
         width: 67
         height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -521,7 +433,7 @@ TextureImporter:
         width: 59
         height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -543,7 +455,7 @@ TextureImporter:
         width: 169
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -565,7 +477,7 @@ TextureImporter:
         width: 47
         height: 57
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -583,11 +495,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 100
-        y: 357
+        y: 332
         width: 47
-        height: 23
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -609,7 +521,7 @@ TextureImporter:
         width: 94
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -631,7 +543,7 @@ TextureImporter:
         width: 65
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -653,7 +565,7 @@ TextureImporter:
         width: 91
         height: 69
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -671,11 +583,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 909
-        y: 366
+        y: 332
         width: 37
-        height: 28
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -697,7 +609,7 @@ TextureImporter:
         width: 47
         height: 76
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -711,50 +623,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vecteezy_editable-electronics-devices-symbols-or-icon-illustration_67353295-Photoroom_22
-      rect:
-        serializedVersion: 2
-        x: 110
-        y: 333
-        width: 28
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eca1e938614d576e0800000000000000
-      internalID: -1840331679548433714
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: vecteezy_editable-electronics-devices-symbols-or-icon-illustration_67353295-Photoroom_23
-      rect:
-        serializedVersion: 2
-        x: 909
-        y: 334
-        width: 37
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9930da93a5df783f0800000000000000
-      internalID: -898471036680600679
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: vecteezy_editable-electronics-devices-symbols-or-icon-illustration_67353295-Photoroom_24
       rect:
         serializedVersion: 2
@@ -763,7 +631,7 @@ TextureImporter:
         width: 58
         height: 66
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -785,7 +653,7 @@ TextureImporter:
         width: 53
         height: 101
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -802,12 +670,12 @@ TextureImporter:
       name: vecteezy_editable-electronics-devices-symbols-or-icon-illustration_67353295-Photoroom_26
       rect:
         serializedVersion: 2
-        x: 505
+        x: 506
         y: 199
-        width: 42
-        height: 64
+        width: 41
+        height: 67
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -821,28 +689,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vecteezy_editable-electronics-devices-symbols-or-icon-illustration_67353295-Photoroom_27
-      rect:
-        serializedVersion: 2
-        x: 522
-        y: 252
-        width: 8
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 55a68f3b12c1249d0800000000000000
-      internalID: -2791637887937385899
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: vecteezy_editable-electronics-devices-symbols-or-icon-illustration_67353295-Photoroom_28
       rect:
         serializedVersion: 2
@@ -851,7 +697,7 @@ TextureImporter:
         width: 40
         height: 53
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -873,7 +719,7 @@ TextureImporter:
         width: 93
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -895,7 +741,7 @@ TextureImporter:
         width: 81
         height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -917,7 +763,7 @@ TextureImporter:
         width: 37
         height: 58
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -939,7 +785,7 @@ TextureImporter:
         width: 74
         height: 77
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -961,7 +807,7 @@ TextureImporter:
         width: 119
         height: 119
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -983,7 +829,7 @@ TextureImporter:
         width: 98
         height: 53
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1001,11 +847,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 904
-        y: 86
+        y: 68
         width: 48
-        height: 57
+        height: 75
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1027,7 +873,7 @@ TextureImporter:
         width: 59
         height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1040,55 +886,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: vecteezy_editable-electronics-devices-symbols-or-icon-illustration_67353295-Photoroom_37
-      rect:
-        serializedVersion: 2
-        x: 911
-        y: 77
-        width: 34
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 939e0a9196323df90800000000000000
-      internalID: -6930156467284547271
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: vecteezy_editable-electronics-devices-symbols-or-icon-illustration_67353295-Photoroom_38
-      rect:
-        serializedVersion: 2
-        x: 918
-        y: 68
-        width: 22
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e2c169fe90f57cb80800000000000000
-      internalID: -8374620485793211346
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2841679f6b339d043ad1806679a20195
     internalID: 0
     vertices: []
     indices: 
