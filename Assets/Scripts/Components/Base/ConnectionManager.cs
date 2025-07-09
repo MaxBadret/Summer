@@ -34,13 +34,13 @@ public class ConnectionManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(KeyCode.Space))
+        /*if (Input.GetKey(KeyCode.Space))
         {
             foreach (var connection in connections)
             {
                 Debug.Log(connection.Item1, connection.Item2);
             }
-        }
+        }*/
     }
 
     private void HandleConnectorClick(ConnectorPoint point)
