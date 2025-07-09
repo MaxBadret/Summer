@@ -14,6 +14,8 @@ public class ResistorComponent : BaseComponent
         float outVoltage = input.Voltage - voltageDrop;
 
         outputSignal = new SignalData(outVoltage, input.Current);
+
+        Debug.Log($"[Resistor] Получено: {input.Voltage}В, {input.Current}А → Выход: {outVoltage}В");
     }
 }
 

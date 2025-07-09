@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ConnectorPoint : MonoBehaviour
@@ -5,21 +6,22 @@ public class ConnectorPoint : MonoBehaviour
     public enum ConnectorType { Input, Output }
     public ConnectorType Type;
 
-    public BaseComponent OwnerComponent; // назначается в BaseComponent
-    public ConnectorPoint ConnectedTo;
+    public BaseComponent OwnerComponent;
 
-    private void OnMouseDown()
-    {
-        ConnectionManager.Instance.OnConnectorClicked(this);
-    }
+    public List<ConnectorPoint> ConnectedPoints = new(); // ✅ Поддержка множественных соединений
 
     public void ConnectTo(ConnectorPoint other)
     {
         if (other == null || other == this || other.Type == this.Type)
             return;
 
-        ConnectedTo = other;
-        other.ConnectedTo = this;
+        // Проверяем, уже ли соединены
+        if (ConnectedPoints.Contains(other))
+            return;
+
+        // Устанавливаем соединения
+        ConnectedPoints.Add(other);
+        other.ConnectedPoints.Add(this);
 
         if (Type == ConnectorType.Output)
             OwnerComponent.ConnectOutput(other.OwnerComponent);
@@ -32,3 +34,5 @@ public class ConnectorPoint : MonoBehaviour
         return transform.position;
     }
 }
+
+
