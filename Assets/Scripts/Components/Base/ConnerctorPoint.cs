@@ -10,7 +10,6 @@ public class ConnectorPoint : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log($"Clicked: {name} ({Type})");
         ConnectionManager.Instance.OnConnectorClicked(this);
     }
 
