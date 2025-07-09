@@ -9,11 +9,15 @@ public class CircuitManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            
+            var z = BuildPath(Power);
+            foreach (var VARIABLE in z)
+            {
+                Debug.Log(VARIABLE);
+            }
         }
     }
     
-    private List<ISignalNode> BuildPath(ISignalNode start)
+    private List<ISignalNode> BuildPath(BaseComponent start)
     {
         List<ISignalNode> path = new();
         HashSet<ISignalNode> visited = new();
@@ -21,13 +25,13 @@ public class CircuitManager : MonoBehaviour
         return path;
     }
     
-    void Traverse(ISignalNode node, List<ISignalNode> path, HashSet<ISignalNode> visited)
+    void Traverse(BaseComponent node, List<ISignalNode> path, HashSet<ISignalNode> visited)
     {
         if (visited.Contains(node)) return;
         visited.Add(node);
         path.Add(node);
 
-        foreach (ISignalNode next in node.GetOutputs())
+        foreach (BaseComponent next in node.GetOutputs())
         {
             Traverse(next, path, visited);
         }

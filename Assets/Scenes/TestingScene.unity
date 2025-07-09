@@ -131,7 +131,6 @@ GameObject:
   - component: {fileID: 73857442}
   - component: {fileID: 73857441}
   - component: {fileID: 73857440}
-  - component: {fileID: 73857444}
   m_Layer: 0
   m_Name: ResistorUnit (1)
   m_TagString: Untagged
@@ -207,21 +206,6 @@ Transform:
   - {fileID: 1593991208}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
---- !u!114 &73857444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 73857439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 877eefd977e36c94db2f940f324807a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputComponents: []
-  outputComponents: []
-  resistance: 10
 --- !u!1 &138803117
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,7 +739,6 @@ GameObject:
   - component: {fileID: 1188916273}
   - component: {fileID: 1188916275}
   - component: {fileID: 1188916274}
-  - component: {fileID: 1188916276}
   m_Layer: 0
   m_Name: ResistorUnit
   m_TagString: Untagged
@@ -831,21 +814,6 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1188916276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1188916270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 877eefd977e36c94db2f940f324807a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputComponents: []
-  outputComponents: []
-  resistance: 10
 --- !u!1 &1226022535
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,7 +871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c46f419ec0dee114882ee17fc08d0170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Power: {fileID: 0}
+  Power: {fileID: 1344285864}
 --- !u!1 &1229731991
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,7 +968,6 @@ GameObject:
   - component: {fileID: 1344285864}
   - component: {fileID: 1344285866}
   - component: {fileID: 1344285865}
-  - component: {fileID: 1344285867}
   m_Layer: 0
   m_Name: PowerUnit
   m_TagString: Untagged
@@ -1077,22 +1044,6 @@ CapsuleCollider:
   m_Height: 0.5
   m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1344285867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1344285861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05837b5a172582c448e52f1793cf8972, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputComponents: []
-  outputComponents: []
-  voltage: 5
-  internalResistance: 0.1
 --- !u!1 &1499339870
 GameObject:
   m_ObjectHideFlags: 0
