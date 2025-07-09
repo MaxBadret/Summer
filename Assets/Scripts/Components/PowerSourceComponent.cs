@@ -7,20 +7,20 @@ public class PowerSourceComponent : BaseComponent
     [SerializeField] private float internalResistance = 0.1f;
 
     // Плюсовой и минусовой выходы
-    [SerializeField] private BaseComponent positiveOutput;
-    [SerializeField] private BaseComponent negativeOutput;
+    /*[SerializeField] private BaseComponent positiveOutput;
+    [SerializeField] private BaseComponent negativeOutput;*/
 
     public override float GetResistance() => internalResistance;
 
-    public override List<ISignalNode> GetOutputs()
+    /*public override List<ISignalNode> GetOutputs()
     {
         return new List<ISignalNode> { positiveOutput };
-    }
+    }*/
 
-    public override List<ISignalNode> GetInputs()
+    /*public override List<ISignalNode> GetInputs()
     {
         return new List<ISignalNode> { negativeOutput }; // GND
-    }
+    }*/
 
     public override void ProcessSignal(SignalData input)
     {
@@ -34,11 +34,11 @@ public class PowerSourceComponent : BaseComponent
         return outputSignal;
     }
 
-    public void SetConnections(BaseComponent positive, BaseComponent negative)
+    /*public void SetConnections(BaseComponent positive, BaseComponent negative)
     {
         positiveOutput = positive;
         negativeOutput = negative;
         ConnectOutput(positive);
         ConnectInput(negative);
-    }
+    }*/
 }

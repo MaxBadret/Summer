@@ -33,6 +33,14 @@ public class ConnectionManager : MonoBehaviour
                 }
             }
         }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            foreach (var connection in connections)
+            {
+                Debug.Log(connection.Item1, connection.Item2);
+            }
+        }
     }
 
     private void HandleConnectorClick(ConnectorPoint point)
@@ -80,11 +88,31 @@ public class ConnectionManager : MonoBehaviour
 
     private void RegisterConnection(ConnectorPoint a, ConnectorPoint b)
     {
+        if (a.Type == ConnectorPoint.ConnectorType.Output)
+        {
+            a.OwnerComponent.ConnectOutput(b.OwnerComponent);
+            b.OwnerComponent.ConnectInput(a.OwnerComponent);
+        }
+        else
+        {
+            a.OwnerComponent.ConnectInput(b.OwnerComponent);
+            b.OwnerComponent.ConnectOutput(a.OwnerComponent);
+        }
         connections.Add((a, b));
     }
 
     public void RemoveConnection(ConnectorPoint a, ConnectorPoint b)
     {
+        if (a.Type == ConnectorPoint.ConnectorType.Output)
+        {
+            a.OwnerComponent.DeleteOutput(b.OwnerComponent);
+            b.OwnerComponent.DeleteInput(a.OwnerComponent);
+        }
+        else
+        {
+            a.OwnerComponent.DeleteInput(b.OwnerComponent);
+            b.OwnerComponent.DeleteOutput(a.OwnerComponent);
+        }
         connections.Remove((a, b));
         connections.Remove((b, a));
     }
