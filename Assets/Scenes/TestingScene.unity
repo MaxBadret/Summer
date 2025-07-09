@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 73857442}
   - component: {fileID: 73857441}
   - component: {fileID: 73857440}
+  - component: {fileID: 73857444}
   m_Layer: 0
   m_Name: ResistorUnit (1)
   m_TagString: Untagged
@@ -206,6 +207,21 @@ Transform:
   - {fileID: 1593991208}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!114 &73857444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73857439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 877eefd977e36c94db2f940f324807a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputComponents: []
+  outputComponents: []
+  resistance: 10
 --- !u!1 &138803117
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,7 +570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 0
-  OwnerComponent: {fileID: 1344285864}
+  OwnerComponent: {fileID: 1188916273}
   ConnectedPoints: []
 --- !u!1 &652604732
 GameObject:
@@ -725,7 +741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 1
-  OwnerComponent: {fileID: 1344285864}
+  OwnerComponent: {fileID: 1188916273}
   ConnectedPoints: []
 --- !u!1 &1188916270
 GameObject:
@@ -739,6 +755,7 @@ GameObject:
   - component: {fileID: 1188916273}
   - component: {fileID: 1188916275}
   - component: {fileID: 1188916274}
+  - component: {fileID: 1188916276}
   m_Layer: 0
   m_Name: ResistorUnit
   m_TagString: Untagged
@@ -814,6 +831,21 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1188916276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188916270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 877eefd977e36c94db2f940f324807a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputComponents: []
+  outputComponents: []
+  resistance: 10
 --- !u!1 &1226022535
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,8 +856,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1226022537}
   - component: {fileID: 1226022536}
+  - component: {fileID: 1226022538}
   m_Layer: 0
-  m_Name: GraphManager
+  m_Name: CircuitManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -858,6 +891,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1226022538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226022535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c46f419ec0dee114882ee17fc08d0170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Power: {fileID: 0}
 --- !u!1 &1229731991
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,7 +950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 0
-  OwnerComponent: {fileID: 1344285864}
+  OwnerComponent: {fileID: 73857442}
   ConnectedPoints: []
 --- !u!58 &1229731994
 CircleCollider2D:
@@ -954,6 +1000,7 @@ GameObject:
   - component: {fileID: 1344285864}
   - component: {fileID: 1344285866}
   - component: {fileID: 1344285865}
+  - component: {fileID: 1344285867}
   m_Layer: 0
   m_Name: PowerUnit
   m_TagString: Untagged
@@ -995,8 +1042,6 @@ MonoBehaviour:
   outputComponents: []
   voltage: 5
   internalResistance: 0.1
-  positiveOutput: {fileID: 0}
-  negativeOutput: {fileID: 0}
 --- !u!114 &1344285865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1032,6 +1077,22 @@ CapsuleCollider:
   m_Height: 0.5
   m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1344285867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344285861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05837b5a172582c448e52f1793cf8972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputComponents: []
+  outputComponents: []
+  voltage: 5
+  internalResistance: 0.1
 --- !u!1 &1499339870
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,7 +1310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 1
-  OwnerComponent: {fileID: 1344285864}
+  OwnerComponent: {fileID: 73857442}
   ConnectedPoints: []
 --- !u!58 &1593991210
 CircleCollider2D:

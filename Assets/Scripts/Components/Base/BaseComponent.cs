@@ -5,6 +5,7 @@ public abstract class BaseComponent : MonoBehaviour, ISignalNode
 {
     protected SignalData inputSignal;
     protected SignalData outputSignal;
+    
 
     [SerializeField] protected List<BaseComponent> inputComponents = new();
     [SerializeField] protected List<BaseComponent> outputComponents = new();
@@ -26,6 +27,18 @@ public abstract class BaseComponent : MonoBehaviour, ISignalNode
     {
         if (!outputComponents.Contains(component))
             outputComponents.Add(component);
+    }
+
+    public void DeleteInput(BaseComponent component)
+    {
+        if (inputComponents.Contains(component))
+            inputComponents.Remove(component);
+    }
+    
+    public void DeleteOutput(BaseComponent component)
+    {
+        if (outputComponents.Contains(component))
+            outputComponents.Remove(component);
     }
 }
 
