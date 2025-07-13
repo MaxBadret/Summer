@@ -13,9 +13,13 @@ public class ResistorComponent : BaseComponent
         float voltageDrop = input.Current * resistance;
         float outVoltage = input.Voltage - voltageDrop;
 
+        float inV = Mathf.Round(input.Voltage * 10000f) / 10000f;
+        float curr = Mathf.Round(input.Current * 10000f) / 10000f;
+        float outV = Mathf.Round(outVoltage * 10000f) / 10000f;
+
         outputSignal = new SignalData(outVoltage, input.Current);
 
-        Debug.Log($"[Resistor] Получено: {input.Voltage}В, {input.Current}А → Выход: {outVoltage}В");
+        Debug.Log($"[Resistor] Получено: {inV}В, {curr}А → Выход: {outV}В");
     }
 }
 

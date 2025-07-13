@@ -7,8 +7,8 @@ public class PowerSourceComponent : BaseComponent
     [SerializeField] private float internalResistance = 0.1f;
 
     // Плюсовой и минусовой выходы
-    /*[SerializeField] private BaseComponent positiveOutput;
-    [SerializeField] private BaseComponent negativeOutput;*/
+    public BaseComponent PositiveOutput { get; private set; }
+    public BaseComponent NegativeInput { get; private set; }
 
     public override float GetResistance() => internalResistance;
 
@@ -25,6 +25,7 @@ public class PowerSourceComponent : BaseComponent
     public override void ProcessSignal(SignalData input)
     {
         // Источник ничего не обрабатывает — он и есть начало
+        float curr = Mathf.Round(input.Current * 10000f) / 10000f;
         outputSignal = new SignalData(voltage, input.Current); // пока просто передаём ток дальше
         Debug.Log($"[PowerSource] Даю напряжение: {voltage}В");
     }
@@ -34,11 +35,13 @@ public class PowerSourceComponent : BaseComponent
         return outputSignal;
     }
 
-    /*public void SetConnections(BaseComponent positive, BaseComponent negative)
+    public void SetConnections(BaseComponent positive, BaseComponent negative)
     {
-        positiveOutput = positive;
-        negativeOutput = negative;
+        PositiveOutput = positive;
+        NegativeInput = negative;
         ConnectOutput(positive);
         ConnectInput(negative);
-    }*/
+    }
+
+    public float GetVoltage() => voltage;
 }
