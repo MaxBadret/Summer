@@ -99,6 +99,8 @@ public class ConnectionManager : MonoBehaviour
             b.OwnerComponent.ConnectOutput(a.OwnerComponent);
         }
         connections.Add((a, b));
+
+        CircuitManager.Instance.MarkCircuitChanged();
     }
 
     public void RemoveConnection(ConnectorPoint a, ConnectorPoint b)
@@ -115,6 +117,8 @@ public class ConnectionManager : MonoBehaviour
         }
         connections.Remove((a, b));
         connections.Remove((b, a));
+
+        CircuitManager.Instance.MarkCircuitChanged();
     }
 }
 

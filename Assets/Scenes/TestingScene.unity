@@ -187,7 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputComponents: []
   outputComponents: []
-  resistance: 10
+  resistance: 15
 --- !u!4 &73857443
 Transform:
   m_ObjectHideFlags: 0
@@ -823,7 +823,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1226022537}
-  - component: {fileID: 1226022536}
   - component: {fileID: 1226022538}
   m_Layer: 0
   m_Name: CircuitManager
@@ -832,18 +831,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1226022536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1226022535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79aaa10504e52ea43be99117c8da1fdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1226022537
 Transform:
   m_ObjectHideFlags: 0
@@ -871,7 +858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c46f419ec0dee114882ee17fc08d0170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Power: {fileID: 1344285864}
+  powerSource: {fileID: 1344285864}
 --- !u!1 &1229731991
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,7 +971,7 @@ Transform:
   m_GameObject: {fileID: 1344285861}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.77, y: -0.32, z: 0}
+  m_LocalPosition: {x: -3.9, y: 0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
