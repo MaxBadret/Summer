@@ -11,12 +11,12 @@ public class Buttnoscontroller : MonoBehaviour
     [SerializeField] private Button[] level;
     [SerializeField] private Sprite activeSprite;
     [SerializeField] private Sprite disabledSprite;
+
     void Start()
     {
-        PlayerPrefs.SetInt("level", 1);
-        PlayerPrefs.Save();
         Levels.SetActive(false);
         Levelcontroller.lvl = PlayerPrefs.GetInt("level");
+        Levelcontroller.lvl = Levelcontroller.lvl < 1 ? 1 : Levelcontroller.lvl;
     }
 
     public void MainButton()
