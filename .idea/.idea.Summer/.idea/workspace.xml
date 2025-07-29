@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fd5187f-96bc-456c-a741-37d603995c84" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/SwitchComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/SwitchComponent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/AmperComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/AmperComponent.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Summer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Summer/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestingScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestingScene.unity" afterDir="false" />
     </list>
@@ -96,7 +96,7 @@
       <workItem from="1753167757299" duration="1240000" />
       <workItem from="1753269370813" duration="1400000" />
       <workItem from="1753702103383" duration="5919000" />
-      <workItem from="1753765146227" duration="5815000" />
+      <workItem from="1753765146227" duration="10541000" />
     </task>
     <servers />
   </component>
@@ -112,5 +112,37 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Components/AmperComponent.cs</url>
+          <line>9</line>
+          <properties documentPath="C:\Studies\Summer\Assets\Scripts\Components\AmperComponent.cs" containingFunctionPresentation="Method 'ProcessSignal'">
+            <startOffsets>
+              <option value="254" />
+            </startOffsets>
+            <endOffsets>
+              <option value="255" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Components/PowerSourceComponent.cs</url>
+          <line>27</line>
+          <properties documentPath="C:\Studies\Summer\Assets\Scripts\Components\PowerSourceComponent.cs" containingFunctionPresentation="Method 'ProcessSignal'">
+            <startOffsets>
+              <option value="856" />
+            </startOffsets>
+            <endOffsets>
+              <option value="914" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
