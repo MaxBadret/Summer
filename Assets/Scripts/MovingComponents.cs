@@ -16,8 +16,13 @@ public class MovingComponents : MonoBehaviour
         }
     }
     
-    private void OnMouseDown()
+    public void OnLeftClick()
     {
         isNeedToMove = !isNeedToMove;
+    }
+
+    public void OnRightClick()
+    {
+        Destroy(gameObject);
     }
 }

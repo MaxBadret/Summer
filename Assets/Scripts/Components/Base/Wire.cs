@@ -49,15 +49,15 @@ public class Wire : MonoBehaviour
         boxCollider.offset = Vector2.zero;
     }
 
-    private void OnMouseOver()
-    {
-        if (Input.GetMouseButtonDown(1)) // правая кнопка мыши
-        {
-            RemoveWire();
-        }
-    }
+    // private void OnMouseOver()
+    // {
+    //     if (Input.GetMouseButtonDown(1)) // правая кнопка мыши
+    //     {
+    //         RemoveWire();
+    //     }
+    // }
 
-    private void RemoveWire()
+    public void RemoveWire()
     {
         // Удаляем соединения в обеих точках
         from.ConnectedPoints.Remove(to);
