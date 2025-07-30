@@ -12,7 +12,7 @@ public class ConnectionManager : MonoBehaviour
     // 🔧 Храним все соединения как пары
     private readonly HashSet<(ConnectorPoint, ConnectorPoint)> connections = new();
 
-    private bool canCreateWire = false;
+    private bool canCreateWire = true;
 
     private void Awake()
     {
@@ -53,10 +53,27 @@ public class ConnectionManager : MonoBehaviour
         }
         else
         {
-            if (selectedPoint.Type != point.Type)
+            // if (selectedPoint.Type != point.Type)
+            // {
+            //     ConnectorPoint from = selectedPoint.Type == ConnectorPoint.ConnectorType.Output ? selectedPoint : point;
+            //     ConnectorPoint to = selectedPoint.Type == ConnectorPoint.ConnectorType.Output ? point : selectedPoint;
+            //
+            //     if (ConnectionExists(from, to))
+            //     {
+            //         Debug.LogWarning("Connection already exists!");
+            //     }
+            //     else
+            //     {
+            //         from.ConnectTo(to);
+            //         CreateWire(from, to);
+            //         RegisterConnection(from, to);
+            //     }
+            // }
+            
+            if (selectedPoint != point)
             {
-                ConnectorPoint from = selectedPoint.Type == ConnectorPoint.ConnectorType.Output ? selectedPoint : point;
-                ConnectorPoint to = selectedPoint.Type == ConnectorPoint.ConnectorType.Output ? point : selectedPoint;
+                ConnectorPoint from = selectedPoint;
+                ConnectorPoint to = point;
 
                 if (ConnectionExists(from, to))
                 {
@@ -90,16 +107,16 @@ public class ConnectionManager : MonoBehaviour
 
     private void RegisterConnection(ConnectorPoint a, ConnectorPoint b)
     {
-        if (a.Type == ConnectorPoint.ConnectorType.Output)
-        {
-            a.OwnerComponent.ConnectOutput(b.OwnerComponent);
-            b.OwnerComponent.ConnectInput(a.OwnerComponent);
-        }
-        else
-        {
-            a.OwnerComponent.ConnectInput(b.OwnerComponent);
-            b.OwnerComponent.ConnectOutput(a.OwnerComponent);
-        }
+        // if (a.Type == ConnectorPoint.ConnectorType.Output)
+        // {
+        //     a.OwnerComponent.ConnectOutput(b.OwnerComponent);
+        //     b.OwnerComponent.ConnectInput(a.OwnerComponent);
+        // }
+        // else
+        // {
+        //     a.OwnerComponent.ConnectInput(b.OwnerComponent);
+        //     b.OwnerComponent.ConnectOutput(a.OwnerComponent);
+        // }
         connections.Add((a, b));
 
         CircuitManager.Instance.MarkCircuitChanged();
@@ -107,25 +124,15 @@ public class ConnectionManager : MonoBehaviour
 
     public void RemoveConnection(ConnectorPoint a, ConnectorPoint b)
     {
-        if (a.Type == ConnectorPoint.ConnectorType.Output)
-        {
-            a.OwnerComponent.DeleteOutput(b.OwnerComponent);
-            b.OwnerComponent.DeleteInput(a.OwnerComponent);
-        }
-        else
-        {
-            a.OwnerComponent.DeleteInput(b.OwnerComponent);
-            b.OwnerComponent.DeleteOutput(a.OwnerComponent);
-        }
         connections.Remove((a, b));
         connections.Remove((b, a));
 
         CircuitManager.Instance.MarkCircuitChanged();
     }
 
-    public void WireModeSwitch()
-    {
-        canCreateWire = !canCreateWire;
-    }
+    // public void WireModeSwitch()
+    // {
+    //     canCreateWire = !canCreateWire;
+    // }
 }
 

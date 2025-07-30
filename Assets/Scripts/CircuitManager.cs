@@ -29,7 +29,7 @@ public class CircuitManager : MonoBehaviour
         {
             Debug.Log("🔄 Схема изменилась, проверяем...");
 
-            List<BaseComponent> path = BuildPath(powerSource);
+            List<BaseComponent> path = BuildPath(powerSource.PositiveOutput);
 
             // Сбрасываем circuitChanged сразу после построения пути,
             // чтобы не повторять этот процесс при следующем кадре
@@ -80,7 +80,7 @@ public class CircuitManager : MonoBehaviour
         }
     }
 
-    private List<BaseComponent> BuildPath(BaseComponent start)
+    private List<BaseComponent> BuildPath(ConnectorPoint start)
     {
         List<BaseComponent> path = new();
         HashSet<BaseComponent> visited = new();
@@ -88,16 +88,20 @@ public class CircuitManager : MonoBehaviour
         return path;
     }
 
-    private void Traverse(BaseComponent node, List<BaseComponent> path, HashSet<BaseComponent> visited)
+    private void Traverse(ConnectorPoint point, List<BaseComponent> path, HashSet<BaseComponent> visited)
     {
-        if (node == null || visited.Contains(node)) return;
-        visited.Add(node);
-        path.Add(node);
+        if (point.OwnerComponent== null || visited.Contains(point.OwnerComponent)) return;
+        visited.Add(point.OwnerComponent);
+        path.Add(point.OwnerComponent);
 
-        foreach (BaseComponent next in node.GetOutputs())
+        foreach (ConnectorPoint next in point.ConnectedPoints)
         {
             if (next != null)
-                Traverse(next, path, visited);
+            {
+                var owner = next.OwnerComponent;
+                if (owner.GetAnotherPoint(next))
+                    Traverse(owner.GetAnotherPoint(next), path, visited);
+            }
         }
     }
 
@@ -114,20 +118,22 @@ public class CircuitManager : MonoBehaviour
     private bool IsCircuitClosed(PowerSourceComponent source)
     {
         HashSet<BaseComponent> visited = new();
-        return SearchLoop(source, source, visited);
+        return SearchLoop(source.PositiveOutput, source.NegativeInput, visited);
     }
     
-    private bool SearchLoop(BaseComponent current, BaseComponent target, HashSet<BaseComponent> visited)
+    private bool SearchLoop(ConnectorPoint current, ConnectorPoint  target, HashSet<BaseComponent> visited)
     {
-        if (visited.Contains(current)) return false;
-        visited.Add(current);
+        if (visited.Contains(current.OwnerComponent)) return false;
+        visited.Add(current.OwnerComponent);
 
-        foreach (BaseComponent next in current.GetOutputs())
+        foreach (ConnectorPoint next in current.ConnectedPoints)
         {
+            var owner = next.OwnerComponent;
+            var outputPoint = owner.GetAnotherPoint(next);
             if (next == target)
                 return true;
 
-            if (SearchLoop(next, target, visited))
+            if (SearchLoop(outputPoint, target, visited))
                 return true;
         }
 

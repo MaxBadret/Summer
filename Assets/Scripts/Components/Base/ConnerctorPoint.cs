@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class ConnectorPoint : MonoBehaviour
 {
-    public enum ConnectorType { Input, Output }
-    public ConnectorType Type;
+    
 
      [SerializeField] public BaseComponent OwnerComponent;
 
@@ -12,7 +11,7 @@ public class ConnectorPoint : MonoBehaviour
 
     public void ConnectTo(ConnectorPoint other)
     {
-        if (other == null || other == this || other.Type == this.Type)
+        if (other == null || other == this)
             return;
 
         // Проверяем, уже ли соединены

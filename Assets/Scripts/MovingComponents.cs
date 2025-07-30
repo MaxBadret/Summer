@@ -15,19 +15,19 @@ public class MovingComponents : MonoBehaviour
     void Start()
     {
         // Поиск RectTransform с названием "MoveArea"
-        GameObject areaObject = GameObject.Find("Level");
-        if (areaObject != null)
-        {
-            movementArea = areaObject.GetComponent<RectTransform>();
-            if (movementArea != null)
-                CalculateBounds();
-            else
-                Debug.LogError("MoveArea найден, но не содержит RectTransform!");
-        }
-        else
-        {
-            Debug.LogError("MoveArea не найден на сцене!");
-        }
+        // GameObject areaObject = GameObject.Find("Level");
+        // if (areaObject != null)
+        // {
+        //     movementArea = areaObject.GetComponent<RectTransform>();
+        //     if (movementArea != null)
+        //         CalculateBounds();
+        //     else
+        //         Debug.LogError("MoveArea найден, но не содержит RectTransform!");
+        // }
+        // else
+        // {
+        //     Debug.LogError("MoveArea не найден на сцене!");
+        // }
     }
 
     void Update()

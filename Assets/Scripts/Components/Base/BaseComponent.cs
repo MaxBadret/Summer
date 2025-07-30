@@ -5,40 +5,27 @@ public abstract class BaseComponent : MonoBehaviour, ISignalNode
 {
     protected SignalData inputSignal;
     protected SignalData outputSignal;
+
+    [SerializeField] protected ConnectorPoint Point1;
+    [SerializeField] protected ConnectorPoint Point2;
     
-
-    [SerializeField] protected List<BaseComponent> inputComponents = new();
-    [SerializeField] protected List<BaseComponent> outputComponents = new();
-
-    public virtual List<ISignalNode> GetInputs() => new List<ISignalNode>(inputComponents);
-    public virtual List<ISignalNode> GetOutputs() => new List<ISignalNode>(outputComponents);
-
     public abstract float GetResistance();
     public abstract void ProcessSignal(SignalData input);
     public virtual SignalData GetOutputSignal() => outputSignal;
-
-    public void ConnectInput(BaseComponent component)
+    
+    public ConnectorPoint GetAnotherPoint(ConnectorPoint point)
     {
-        if (!inputComponents.Contains(component))
-            inputComponents.Add(component);
-    }
+        if (point == Point1)
+            return Point2;
+        else if (point == Point2)
+        {
+            return Point1;
+        }
 
-    public void ConnectOutput(BaseComponent component)
-    {
-        if (!outputComponents.Contains(component))
-            outputComponents.Add(component);
-    }
-
-    public void DeleteInput(BaseComponent component)
-    {
-        if (inputComponents.Contains(component))
-            inputComponents.Remove(component);
+        return null;
     }
     
-    public void DeleteOutput(BaseComponent component)
-    {
-        if (outputComponents.Contains(component))
-            outputComponents.Remove(component);
-    }
+
+    
 }
 

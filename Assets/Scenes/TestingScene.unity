@@ -185,8 +185,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 877eefd977e36c94db2f940f324807a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputComponents: []
-  outputComponents: []
+  Point1: {fileID: 1229731993}
+  Point2: {fileID: 1593991209}
   resistance: 5
 --- !u!4 &73857443
 Transform:
@@ -374,8 +374,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3137e31178dd4a08934e823fd63fadb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputComponents: []
-  outputComponents: []
+  Point1: {fileID: 1391000827}
+  Point2: {fileID: 1735585927}
   displayText: {fileID: 935732982}
 --- !u!114 &169435152
 MonoBehaviour:
@@ -512,7 +512,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9b813b6020a7343b2cfbc040a07149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 0
   OwnerComponent: {fileID: 1344285864}
   ConnectedPoints: []
 --- !u!1 &246083948
@@ -560,7 +559,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9b813b6020a7343b2cfbc040a07149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 0
   OwnerComponent: {fileID: 284415782}
   ConnectedPoints: []
 --- !u!58 &246083951
@@ -630,8 +628,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27239f8f0df2413da5ef4537380c05bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputComponents: []
-  outputComponents: []
+  Point1: {fileID: 246083950}
+  Point2: {fileID: 624557816}
   forwardVoltageDrop: 0.7
   reverseLeakageCurrent: 0.0001
   isForwardBiased: 1
@@ -988,7 +986,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9b813b6020a7343b2cfbc040a07149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 0
   OwnerComponent: {fileID: 1188916273}
   ConnectedPoints: []
 --- !u!1 &624557814
@@ -1036,7 +1033,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9b813b6020a7343b2cfbc040a07149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 1
   OwnerComponent: {fileID: 284415782}
   ConnectedPoints: []
 --- !u!58 &624557817
@@ -1207,7 +1203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9b813b6020a7343b2cfbc040a07149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 0
   OwnerComponent: {fileID: 1294481545}
   ConnectedPoints: []
 --- !u!58 &852057781
@@ -1327,7 +1322,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9b813b6020a7343b2cfbc040a07149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 1
   OwnerComponent: {fileID: 1188916273}
   ConnectedPoints: []
 --- !u!1 &935732981
@@ -1642,8 +1636,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 877eefd977e36c94db2f940f324807a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputComponents: []
-  outputComponents: []
+  Point1: {fileID: 480976117}
+  Point2: {fileID: 882334425}
   resistance: 5
 --- !u!114 &1188916274
 MonoBehaviour:
@@ -1770,7 +1764,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9b813b6020a7343b2cfbc040a07149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 0
   OwnerComponent: {fileID: 73857442}
   ConnectedPoints: []
 --- !u!58 &1229731994
@@ -1854,7 +1847,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9b813b6020a7343b2cfbc040a07149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 1
   OwnerComponent: {fileID: 1294481545}
   ConnectedPoints: []
 --- !u!58 &1263706861
@@ -1977,8 +1969,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bbfb21fe14346daafd026b1652f540e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputComponents: []
-  outputComponents: []
+  Point1: {fileID: 852057780}
+  Point2: {fileID: 1263706860}
   isOn: 1
   resistance: 0
 --- !u!1 &1344285861
@@ -2030,8 +2022,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05837b5a172582c448e52f1793cf8972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputComponents: []
-  outputComponents: []
+  Point1: {fileID: 1503815492}
+  Point2: {fileID: 199533333}
   voltage: 6
   internalResistance: 0.1
 --- !u!114 &1344285865
@@ -2114,7 +2106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9b813b6020a7343b2cfbc040a07149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 0
   OwnerComponent: {fileID: 169435149}
   ConnectedPoints: []
 --- !u!58 &1391000828
@@ -2321,7 +2312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9b813b6020a7343b2cfbc040a07149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 1
   OwnerComponent: {fileID: 1344285864}
   ConnectedPoints: []
 --- !u!1 &1593991207
@@ -2369,7 +2359,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9b813b6020a7343b2cfbc040a07149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 1
   OwnerComponent: {fileID: 73857442}
   ConnectedPoints: []
 --- !u!58 &1593991210
@@ -2453,7 +2442,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9b813b6020a7343b2cfbc040a07149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 1
   OwnerComponent: {fileID: 169435149}
   ConnectedPoints: []
 --- !u!58 &1735585928
