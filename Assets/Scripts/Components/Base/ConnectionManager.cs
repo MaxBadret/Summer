@@ -127,5 +127,50 @@ public class ConnectionManager : MonoBehaviour
     {
         canCreateWire = !canCreateWire;
     }
+
+    public void RemoveAllConnectionsWith(BaseComponent component)
+    {
+        List<(ConnectorPoint, ConnectorPoint)> toRemove = new();
+
+        foreach (var pair in connections)
+        {
+            if (pair.Item1.OwnerComponent == component || pair.Item2.OwnerComponent == component)
+            {
+                toRemove.Add(pair);
+            }
+        }
+
+        foreach (var pair in toRemove)
+        {
+            // Удаление связей между компонентами
+            if (pair.Item1.Type == ConnectorPoint.ConnectorType.Output)
+            {
+                pair.Item1.OwnerComponent.DeleteOutput(pair.Item2.OwnerComponent);
+                pair.Item2.OwnerComponent.DeleteInput(pair.Item1.OwnerComponent);
+            }
+            else
+            {
+                pair.Item1.OwnerComponent.DeleteInput(pair.Item2.OwnerComponent);
+                pair.Item2.OwnerComponent.DeleteOutput(pair.Item1.OwnerComponent);
+            }
+
+            // Удаление визуального провода
+            Wire[] allWires = Object.FindObjectsByType<Wire>(FindObjectsSortMode.None);
+            
+            foreach (var wire in allWires)
+            {
+                if ((wire.from == pair.Item1 && wire.to == pair.Item2) ||
+                    (wire.from == pair.Item2 && wire.to == pair.Item1))
+                {
+                    Destroy(wire.gameObject);
+                }
+            }
+
+            connections.Remove(pair);
+        }
+
+        CircuitManager.Instance.MarkCircuitChanged();
+    }
+
 }
 

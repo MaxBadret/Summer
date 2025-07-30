@@ -12,6 +12,8 @@ public class CircuitManager : MonoBehaviour
 
     private bool circuitValid = false;
 
+    private BaseComponent lastBeforePowerSource = null;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -116,7 +118,7 @@ public class CircuitManager : MonoBehaviour
         HashSet<BaseComponent> visited = new();
         return SearchLoop(source, source, visited);
     }
-    
+
     private bool SearchLoop(BaseComponent current, BaseComponent target, HashSet<BaseComponent> visited)
     {
         if (visited.Contains(current)) return false;
@@ -125,12 +127,20 @@ public class CircuitManager : MonoBehaviour
         foreach (BaseComponent next in current.GetOutputs())
         {
             if (next == target)
+            {
+                lastBeforePowerSource = current; // ✅ Запоминаем последний перед источником
                 return true;
+            }
 
             if (SearchLoop(next, target, visited))
                 return true;
         }
 
         return false;
+    }
+    
+    public BaseComponent GetLastComponent()
+    {
+        return lastBeforePowerSource;
     }
 }
