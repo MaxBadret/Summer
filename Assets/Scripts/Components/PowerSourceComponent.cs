@@ -27,7 +27,7 @@ public class PowerSourceComponent : BaseComponent
         // Источник ничего не обрабатывает — он и есть начало
         float curr = Mathf.Round(input.Current * 10000f) / 10000f;
         outputSignal = new SignalData(voltage, input.Current); // пока просто передаём ток дальше
-        Debug.Log($"[PowerSource] Даю напряжение: {voltage}В");
+        //Debug.Log($"[PowerSource] Даю напряжение: {voltage}В");
     }
 
     public override SignalData GetOutputSignal()
