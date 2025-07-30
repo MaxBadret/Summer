@@ -52,6 +52,7 @@ public class MovingComponents : MonoBehaviour
 
     public void OnRightClick()
     {
+        ConnectionManager.Instance.RemoveAllConnectionsWith(GetComponent<BaseComponent>());
         Destroy(gameObject);
     }
 

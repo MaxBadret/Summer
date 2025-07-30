@@ -8,8 +8,6 @@ public class ResistorComponent : BaseComponent
 
     public override void ProcessSignal(SignalData input)
     {
-        inputSignal = input;
-
         float voltageDrop = input.Current * resistance;
         float outVoltage = input.Voltage - voltageDrop;
 

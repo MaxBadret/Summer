@@ -12,7 +12,7 @@ public class ConnectionManager : MonoBehaviour
     // 🔧 Храним все соединения как пары
     private readonly HashSet<(ConnectorPoint, ConnectorPoint)> connections = new();
 
-    private bool canCreateWire = true;
+    private bool canCreateWire = false;
 
     private void Awake()
     {
@@ -53,27 +53,10 @@ public class ConnectionManager : MonoBehaviour
         }
         else
         {
-            // if (selectedPoint.Type != point.Type)
-            // {
-            //     ConnectorPoint from = selectedPoint.Type == ConnectorPoint.ConnectorType.Output ? selectedPoint : point;
-            //     ConnectorPoint to = selectedPoint.Type == ConnectorPoint.ConnectorType.Output ? point : selectedPoint;
-            //
-            //     if (ConnectionExists(from, to))
-            //     {
-            //         Debug.LogWarning("Connection already exists!");
-            //     }
-            //     else
-            //     {
-            //         from.ConnectTo(to);
-            //         CreateWire(from, to);
-            //         RegisterConnection(from, to);
-            //     }
-            // }
-            
-            if (selectedPoint != point)
+            if (selectedPoint.Type != point.Type)
             {
-                ConnectorPoint from = selectedPoint;
-                ConnectorPoint to = point;
+                ConnectorPoint from = selectedPoint.Type == ConnectorPoint.ConnectorType.Output ? selectedPoint : point;
+                ConnectorPoint to = selectedPoint.Type == ConnectorPoint.ConnectorType.Output ? point : selectedPoint;
 
                 if (ConnectionExists(from, to))
                 {
@@ -107,16 +90,16 @@ public class ConnectionManager : MonoBehaviour
 
     private void RegisterConnection(ConnectorPoint a, ConnectorPoint b)
     {
-        // if (a.Type == ConnectorPoint.ConnectorType.Output)
-        // {
-        //     a.OwnerComponent.ConnectOutput(b.OwnerComponent);
-        //     b.OwnerComponent.ConnectInput(a.OwnerComponent);
-        // }
-        // else
-        // {
-        //     a.OwnerComponent.ConnectInput(b.OwnerComponent);
-        //     b.OwnerComponent.ConnectOutput(a.OwnerComponent);
-        // }
+        if (a.Type == ConnectorPoint.ConnectorType.Output)
+        {
+            a.OwnerComponent.ConnectOutput(b.OwnerComponent);
+            b.OwnerComponent.ConnectInput(a.OwnerComponent);
+        }
+        else
+        {
+            a.OwnerComponent.ConnectInput(b.OwnerComponent);
+            b.OwnerComponent.ConnectOutput(a.OwnerComponent);
+        }
         connections.Add((a, b));
 
         CircuitManager.Instance.MarkCircuitChanged();
@@ -124,15 +107,70 @@ public class ConnectionManager : MonoBehaviour
 
     public void RemoveConnection(ConnectorPoint a, ConnectorPoint b)
     {
+        if (a.Type == ConnectorPoint.ConnectorType.Output)
+        {
+            a.OwnerComponent.DeleteOutput(b.OwnerComponent);
+            b.OwnerComponent.DeleteInput(a.OwnerComponent);
+        }
+        else
+        {
+            a.OwnerComponent.DeleteInput(b.OwnerComponent);
+            b.OwnerComponent.DeleteOutput(a.OwnerComponent);
+        }
         connections.Remove((a, b));
         connections.Remove((b, a));
 
         CircuitManager.Instance.MarkCircuitChanged();
     }
 
-    // public void WireModeSwitch()
-    // {
-    //     canCreateWire = !canCreateWire;
-    // }
+    public void WireModeSwitch()
+    {
+        canCreateWire = !canCreateWire;
+    }
+
+    public void RemoveAllConnectionsWith(BaseComponent component)
+    {
+        List<(ConnectorPoint, ConnectorPoint)> toRemove = new();
+
+        foreach (var pair in connections)
+        {
+            if (pair.Item1.OwnerComponent == component || pair.Item2.OwnerComponent == component)
+            {
+                toRemove.Add(pair);
+            }
+        }
+
+        foreach (var pair in toRemove)
+        {
+            // Удаление связей между компонентами
+            if (pair.Item1.Type == ConnectorPoint.ConnectorType.Output)
+            {
+                pair.Item1.OwnerComponent.DeleteOutput(pair.Item2.OwnerComponent);
+                pair.Item2.OwnerComponent.DeleteInput(pair.Item1.OwnerComponent);
+            }
+            else
+            {
+                pair.Item1.OwnerComponent.DeleteInput(pair.Item2.OwnerComponent);
+                pair.Item2.OwnerComponent.DeleteOutput(pair.Item1.OwnerComponent);
+            }
+
+            // Удаление визуального провода
+            Wire[] allWires = Object.FindObjectsByType<Wire>(FindObjectsSortMode.None);
+            
+            foreach (var wire in allWires)
+            {
+                if ((wire.from == pair.Item1 && wire.to == pair.Item2) ||
+                    (wire.from == pair.Item2 && wire.to == pair.Item1))
+                {
+                    Destroy(wire.gameObject);
+                }
+            }
+
+            connections.Remove(pair);
+        }
+
+        CircuitManager.Instance.MarkCircuitChanged();
+    }
+
 }
 
