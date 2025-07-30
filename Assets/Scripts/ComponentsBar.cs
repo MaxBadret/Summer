@@ -26,7 +26,7 @@ public class ComponentsBar : MonoBehaviour
         }
 
         GameObject instance = Instantiate(prefab, defaultSpawnPosition, Quaternion.identity, spawnParent);
-        Debug.Log($"✅ Спавн: {prefab.name}");
+        //Debug.Log($"✅ Спавн: {prefab.name}");
     }
 }
 
