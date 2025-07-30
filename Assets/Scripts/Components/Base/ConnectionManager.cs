@@ -140,6 +140,8 @@ public class ConnectionManager : MonoBehaviour
                 if ((wire.from == pair.Item1 && wire.to == pair.Item2) ||
                     (wire.from == pair.Item2 && wire.to == pair.Item1))
                 {
+                    wire.from.ConnectedPoints.Remove(wire.to);
+                    wire.to.ConnectedPoints.Remove(wire.from);
                     Destroy(wire.gameObject);
                 }
             }
