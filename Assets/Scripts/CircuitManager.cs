@@ -7,6 +7,7 @@ public class CircuitManager : MonoBehaviour
 
     [SerializeField] private PowerSourceComponent powerSource;
 
+    private BaseComponent lastBeforePowerSource = null;
     private List<BaseComponent> lastPath = new();
     private bool circuitChanged = true;
 
@@ -131,12 +132,19 @@ public class CircuitManager : MonoBehaviour
             var owner = next.OwnerComponent;
             var outputPoint = owner.GetAnotherPoint(next);
             if (next == target)
+            {
+                lastBeforePowerSource = current.OwnerComponent;
                 return true;
-
+            }
             if (SearchLoop(outputPoint, target, visited))
                 return true;
         }
 
         return false;
+    }
+    
+    public BaseComponent GetLastComponent()
+    {
+        return lastBeforePowerSource;
     }
 }
