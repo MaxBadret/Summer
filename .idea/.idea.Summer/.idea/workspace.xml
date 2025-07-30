@@ -7,14 +7,8 @@
     <list default="true" id="9fd5187f-96bc-456c-a741-37d603995c84" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Summer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Summer/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestingScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestingScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CircuitManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CircuitManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Components/Base/BaseComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Base/BaseComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Components/Base/ConnectionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Base/ConnectionManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Components/Base/ConnerctorPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Base/ConnerctorPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Components/Base/ISignalNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Base/ISignalNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Components/PowerSourceComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Components/PowerSourceComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Components/SwitchComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Components/SwitchComponent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MovingComponents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MovingComponents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +108,7 @@
       <updated>1752603620300</updated>
       <workItem from="1752603627732" duration="2458000" />
       <workItem from="1752606310509" duration="146000" />
-      <workItem from="1753882534657" duration="8687000" />
+      <workItem from="1753882534657" duration="10023000" />
     </task>
     <servers />
   </component>

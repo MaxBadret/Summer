@@ -33,13 +33,13 @@ public class Switch : BaseComponent
         Debug.Log("Переключатель: " + (isOn ? "ON" : "OFF"));
     }
 
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(1))
-        {
-            Toggle();
-        }
-    }
+    // private void Update()
+    // {
+    //     if (Input.GetMouseButtonDown(1))
+    //     {
+    //         Toggle();
+    //     }
+    // }
 }
 
 
