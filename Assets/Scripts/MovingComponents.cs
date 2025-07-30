@@ -14,7 +14,7 @@ public class MovingComponents : MonoBehaviour
 
     void Start()
     {
-        // Поиск RectTransform с названием "MoveArea"
+        //Поиск RectTransform с названием "MoveArea"
         GameObject areaObject = GameObject.Find("Level");
         if (areaObject != null)
         {

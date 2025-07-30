@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -7,8 +8,14 @@ public class PowerSourceComponent : BaseComponent
     [SerializeField] private float internalResistance = 0.1f;
 
     // Плюсовой и минусовой выходы
-    public BaseComponent PositiveOutput { get; private set; }
-    public BaseComponent NegativeInput { get; private set; }
+    public ConnectorPoint PositiveOutput { get; private set; }
+    public ConnectorPoint NegativeInput { get; private set; }
+
+    private void Start()
+    {
+        PositiveOutput = Point1;
+        NegativeInput = Point2;
+    }
 
     public override float GetResistance() => internalResistance;
 
@@ -35,13 +42,13 @@ public class PowerSourceComponent : BaseComponent
         return outputSignal;
     }
 
-    public void SetConnections(BaseComponent positive, BaseComponent negative)
-    {
-        PositiveOutput = positive;
-        NegativeInput = negative;
-        ConnectOutput(positive);
-        ConnectInput(negative);
-    }
+    // public void SetConnections(BaseComponent positive, BaseComponent negative)
+    // {
+    //     PositiveOutput = positive;
+    //     NegativeInput = negative;
+    //     ConnectOutput(positive);
+    //     ConnectInput(negative);
+    // }
 
     public float GetVoltage() => voltage;
 }
