@@ -39,7 +39,7 @@ public class LevelManager : MonoBehaviour
     {
         if (!File.Exists(saveFilePath))
         {
-            Debug.LogWarning("❌ Файл прогресса не найден.");
+            //Debug.LogWarning("❌ Файл прогресса не найден.");
             return;
         }
 
@@ -54,7 +54,7 @@ public class LevelManager : MonoBehaviour
                 if (entry.completed == 0) // Если ещё не пройден
                 {
                     entry.completed = 1; // Помечаем как пройденный
-                    Debug.Log($"✅ Уровень \"{levelName}\" пройден!");
+                    //Debug.Log($"✅ Уровень \"{levelName}\" пройден!");
                 }
                 found = true;
                 break;
@@ -63,7 +63,7 @@ public class LevelManager : MonoBehaviour
 
         if (!found)
         {
-            Debug.LogWarning($"⚠️ Уровень \"{levelName}\" не найден в json.");
+            //Debug.LogWarning($"⚠️ Уровень \"{levelName}\" не найден в json.");
             return;
         }
 

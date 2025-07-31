@@ -41,11 +41,11 @@ public static class LevelProgressManager
             if (changed)
             {
                 SaveProgress();
-                Debug.Log("🔄 Файл прогресса обновлён.");
+                //Debug.Log("🔄 Файл прогресса обновлён.");
             }
             else
             {
-                Debug.Log("✅ Файл прогресса актуален.");
+                //Debug.Log("✅ Файл прогресса актуален.");
             }
         }
         else
@@ -58,7 +58,7 @@ public static class LevelProgressManager
             }
 
             SaveProgress();
-            Debug.Log("📄 Файл прогресса создан.");
+            //Debug.Log("📄 Файл прогресса создан.");
         }
     }
 
