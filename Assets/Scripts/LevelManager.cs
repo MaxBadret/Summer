@@ -51,9 +51,9 @@ public class LevelManager : MonoBehaviour
         {
             if (entry.name == levelName)
             {
-                if (!entry.completed)
+                if (entry.completed == 0) // Если ещё не пройден
                 {
-                    entry.completed = true;
+                    entry.completed = 1; // Помечаем как пройденный
                     Debug.Log($"✅ Уровень \"{levelName}\" пройден!");
                 }
                 found = true;
