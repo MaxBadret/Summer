@@ -11,7 +11,7 @@ public class CircuitManager : MonoBehaviour
     private List<BaseComponent> lastPath = new();
     private bool circuitChanged = true;
 
-    private bool circuitValid = false;
+    public bool circuitValid = false;
 
     private void Awake()
     {
