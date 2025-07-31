@@ -12,7 +12,7 @@ public class ConnectionManager : MonoBehaviour
     // 🔧 Храним все соединения как пары
     private readonly HashSet<(ConnectorPoint, ConnectorPoint)> connections = new();
 
-    private bool canCreateWire = true;
+    public bool canCreateWire = false;
 
     private void Awake()
     {
@@ -112,11 +112,6 @@ public class ConnectionManager : MonoBehaviour
 
         CircuitManager.Instance.MarkCircuitChanged();
     }
-    
-    // public void WireModeSwitch()
-    // {
-    //     canCreateWire = !canCreateWire;
-    // }
     
     public void RemoveAllConnectionsWith(BaseComponent component)
     {
