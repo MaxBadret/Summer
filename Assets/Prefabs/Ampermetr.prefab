@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2509150453494892205}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.327, y: 0, z: 0}
+  m_LocalPosition: {x: -0.248, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -68,7 +68,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.07
+  m_Radius: 0.05
 --- !u!114 &1431659941366842276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,8 +182,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.07375226, y: -0.008128682}
-  m_Size: {x: 0.52169627, y: 0.5173583}
+  m_Offset: {x: -0.000039875296, y: 0.0017993602}
+  m_Size: {x: 0.3982261, y: 0.3982261}
   m_Direction: 1
 --- !u!212 &6360764352473677061
 SpriteRenderer:
@@ -229,7 +229,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1919486169695241835, guid: 88cae06e1d2f5d74982ff600063543f6, type: 3}
+  m_Sprite: {fileID: 4361895418369985113, guid: 78b2598371caa2242badd4d433cd5127, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -342,7 +342,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: '
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -407,7 +409,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0.7325361, w: 0.7325365}
+  m_margin: {x: 0.066869736, y: 0, z: 0.9549172, w: 0.7325365}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -443,7 +445,7 @@ Transform:
   m_GameObject: {fileID: 8618476368846828399}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.479, y: 0.005, z: 0}
+  m_LocalPosition: {x: 0.253, y: -0.001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -483,8 +485,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.03250289, y: 0}
-  m_Radius: 0.14074135
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.05
 --- !u!114 &7637454399959379980
 MonoBehaviour:
   m_ObjectHideFlags: 0

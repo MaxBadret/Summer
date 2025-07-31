@@ -20,5 +20,10 @@ public class ResistorComponent : BaseComponent
 
         Debug.Log($"[Resistor] Получено: {inV}В, {curr}А → Выход: {outV}В");
     }
+
+    public void SetResistance(float res)
+    {
+        resistance = res;
+    }
 }
 

@@ -44,6 +44,7 @@ public class MouseManager : MonoBehaviour
                     WireActions(MouseButtonType.Right, hit);
                     break;
                 case MouseMode.Config:
+                    ConfigActions(MouseButtonType.Right, hit);
                     break;
             }
         }
@@ -65,6 +66,7 @@ public class MouseManager : MonoBehaviour
                     WireActions(MouseButtonType.Left, hit);
                     break;
                 case MouseMode.Config:
+                    ConfigActions(MouseButtonType.Left, hit);
                     break;
             }
         }
@@ -72,7 +74,29 @@ public class MouseManager : MonoBehaviour
 
     private void ConfigActions(MouseButtonType type, RaycastHit2D hit)
     {
-
+        switch (type)
+        {
+            case MouseButtonType.Left:
+                var interactable1 = hit.collider.GetComponent<Switch>();
+                if (interactable1 != null)
+                {
+                    interactable1.Toggle();
+                }
+                
+                var interactable2 = hit.collider.GetComponent<ResistorComponent>();
+                if (interactable2 != null)
+                {
+                    ResistorConfigurator.Instance.OpenConfig(interactable2);
+                }
+                break;
+            case MouseButtonType.Right:
+                var interactable3 = hit.collider.GetComponent<ResistorComponent>();
+                if (interactable3 != null)
+                {
+                    ResistorConfigurator.Instance.CloseConfig();
+                }
+                break;
+        }
     }
 
     private void SetActions(MouseButtonType type, RaycastHit2D hit)

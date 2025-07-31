@@ -4,6 +4,8 @@ public class Switch : BaseComponent
 {
     [SerializeField] private bool isOn;
     [SerializeField] private float resistance = 0f;
+    [SerializeField] private GameObject onImage;
+    [SerializeField] private GameObject offImage;
     private bool isMouseOver = false;
 
     public override float GetResistance()
@@ -32,25 +34,17 @@ public class Switch : BaseComponent
     public void Toggle()
     {
         isOn = !isOn;
-        Debug.Log("Переключатель: " + (isOn ? "ON" : "OFF"));
-    }
-
-    private void OnMouseEnter()
-    {
-        isMouseOver = true;
-    }
-
-    private void OnMouseExit()
-    {
-        isMouseOver = false;
-    }
-
-    private void Update()
-    {
-        if (isMouseOver && Input.GetKeyDown(KeyCode.Space))
+        if (isOn)
         {
-            Toggle();
+            onImage.SetActive(true);
+            offImage.SetActive(false);
         }
+        else
+        {
+            onImage.SetActive(false);
+            offImage.SetActive(true);
+        }
+            
     }
 }
 
