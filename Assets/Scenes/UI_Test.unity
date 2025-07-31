@@ -667,6 +667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1264456e570788b46ad335070489c7f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mode: 1
 --- !u!1 &305956034
 GameObject:
   m_ObjectHideFlags: 0
@@ -3887,7 +3888,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d8d99464f2e7742af70087d3be3a22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conMan: {fileID: 392767257}
   mouseMan: {fileID: 267842897}
   resistorPrefab: {fileID: 6897392232014930362, guid: 656836622f1e5574a969ef8abb24e579, type: 3}
   switchPrefab: {fileID: 710744730507694066, guid: b58dac6e4d8c36047bcc2434dad3af49, type: 3}
@@ -3897,8 +3897,8 @@ MonoBehaviour:
   lightPrefab: {fileID: 0}
   spawnParent: {fileID: 1592952272}
   defaultSpawnPosition: {x: 0, y: 0, z: 0}
-  confModeIm: {fileID: 0}
-  setModeIm: {fileID: 0}
+  confModeIm: {fileID: 1672611328}
+  setModeIm: {fileID: 1313339276}
   wireModeIm: {fileID: 2078891870}
 --- !u!1001 &2084336827
 PrefabInstance:
