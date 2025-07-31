@@ -8,6 +8,7 @@ public class AmperComponent : BaseComponent
     
     public override void ProcessSignal(SignalData input)
     {
+        inputSignal = input;
         current = input.Current;
         UpdateDisplay();
         Debug.Log($"Прошел через амперметр");
