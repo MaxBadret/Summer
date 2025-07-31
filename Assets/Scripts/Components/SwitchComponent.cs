@@ -13,6 +13,7 @@ public class Switch : BaseComponent
 
     public override void ProcessSignal(SignalData input)
     {
+        inputSignal = input;
         if (isOn)
         {
             // Переключатель замкнут — передаём сигнал дальше

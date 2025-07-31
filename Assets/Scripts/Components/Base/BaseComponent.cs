@@ -12,6 +12,7 @@ public abstract class BaseComponent : MonoBehaviour, ISignalNode
     public abstract float GetResistance();
     public abstract void ProcessSignal(SignalData input);
     public virtual SignalData GetOutputSignal() => outputSignal;
+    public virtual SignalData GetInputSignal() => inputSignal;
     
     public ConnectorPoint GetAnotherPoint(ConnectorPoint point)
     {
@@ -24,8 +25,12 @@ public abstract class BaseComponent : MonoBehaviour, ISignalNode
 
         return null;
     }
-    
 
+    public float GetVoltage()
+    {
+        return Mathf.Abs(GetInputSignal().Voltage - 
+                  GetOutputSignal().Voltage);
+    }
     
 }
 
