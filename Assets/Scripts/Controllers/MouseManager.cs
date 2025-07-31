@@ -3,10 +3,12 @@ using UnityEngine;
 public class MouseManager : MonoBehaviour
 {
     public enum MouseMode { Config, Set, Wire }
-    
+
     public MouseMode mode = MouseMode.Set;
 
     public enum MouseButtonType { Left, Right }
+
+    private bool canUseMouse = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,15 +19,19 @@ public class MouseManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (canUseMouse)
         {
-            HandleRightClick();
-        }
+            if (Input.GetMouseButtonDown(1))
+            {
+                HandleRightClick();
+            }
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            HandleLeftClick();
+            if (Input.GetMouseButtonDown(0))
+            {
+                HandleLeftClick();
+            }
         }
+        
     }
 
     private void HandleRightClick()
@@ -82,7 +88,7 @@ public class MouseManager : MonoBehaviour
                 {
                     interactable1.Toggle();
                 }
-                
+
                 var interactable2 = hit.collider.GetComponent<ResistorComponent>();
                 if (interactable2 != null)
                 {
@@ -139,5 +145,10 @@ public class MouseManager : MonoBehaviour
                 }
                 break;
         }
+    }
+
+    public void ChangeUseMouse(bool isCan)
+    {
+        canUseMouse = isCan;
     }
 }
