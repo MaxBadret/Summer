@@ -3,9 +3,6 @@ using UnityEngine.UI;
 
 public class ComponentsBar : MonoBehaviour
 {
-    [Header("Connection Manager")]
-    [SerializeField] private ConnectionManager conMan;
-
     [Header("Mouse Manager")]
     [SerializeField] private MouseManager mouseMan;
 
@@ -37,12 +34,9 @@ public class ComponentsBar : MonoBehaviour
 
     public enum MouseMode { Config, Set, Wire}
 
-    private void Update()
+    private void Start()
     {
-        if (conMan.canCreateWire == true)
-            SetImageAlpha(wireModeIm, 0.8f);
-        else
-            SetImageAlpha(wireModeIm, 0.5f);
+        SetModeSwitch();
     }
 
     public void SpawnResistor()
@@ -98,45 +92,26 @@ public class ComponentsBar : MonoBehaviour
 
     public void WireModeSwitch()
     {
-        ModeSwitch(MouseMode.Wire);
+        SetImageAlpha(wireModeIm, 0.8f);
+        SetImageAlpha(setModeIm, 0.5f);
+        SetImageAlpha(confModeIm, 0.5f);
+        mouseMan.mode = MouseManager.MouseMode.Wire;
     }
 
     public void SetModeSwitch()
-    {
-        ModeSwitch(MouseMode.Set);
+    {  
+        SetImageAlpha(wireModeIm, 0.5f);
+        SetImageAlpha(setModeIm, 0.8f);
+        SetImageAlpha(confModeIm, 0.5f);
+        mouseMan.mode = MouseManager.MouseMode.Set;
     }
 
     public void ConfigModeSwitch()
     {
-        ModeSwitch(MouseMode.Config);
-    }
-
-    public void ModeSwitch(MouseMode mode)
-    {
-        switch (mode)
-        {
-            case MouseMode.Wire:
-                conMan.canCreateWire = !conMan.canCreateWire;
-                break;
-            case MouseMode.Set:
-                break;
-            case MouseMode.Config:
-                break;
-        }
-    }
-
-    public void ModeSwitch(MouseMode mode, bool isActive)
-    {
-        switch (mode)
-        {
-            case MouseMode.Wire:
-                conMan.canCreateWire = isActive;
-                break;
-            case MouseMode.Set:
-                break;
-            case MouseMode.Config:
-                break;
-        }
+        SetImageAlpha(wireModeIm, 0.5f);
+        SetImageAlpha(setModeIm, 0.5f);
+        SetImageAlpha(confModeIm, 0.8f);
+        mouseMan.mode = MouseManager.MouseMode.Config;
     }
 }
 

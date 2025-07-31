@@ -12,8 +12,6 @@ public class ConnectionManager : MonoBehaviour
     // 🔧 Храним все соединения как пары
     private readonly HashSet<(ConnectorPoint, ConnectorPoint)> connections = new();
 
-    public bool canCreateWire = false;
-
     private void Awake()
     {
         Instance = this;
@@ -21,20 +19,20 @@ public class ConnectionManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && canCreateWire)
-        {
-            Vector2 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mouseWorld, Vector2.zero);
+        // if (Input.GetMouseButtonDown(0) && canCreateWire)
+        // {
+        //     Vector2 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //     RaycastHit2D hit = Physics2D.Raycast(mouseWorld, Vector2.zero);
 
-            if (hit.collider != null)
-            {
-                ConnectorPoint point = hit.collider.GetComponent<ConnectorPoint>();
-                if (point != null)
-                {
-                    HandleConnectorClick(point);
-                }
-            }
-        }
+        //     if (hit.collider != null)
+        //     {
+        //         ConnectorPoint point = hit.collider.GetComponent<ConnectorPoint>();
+        //         if (point != null)
+        //         {
+        //             HandleConnectorClick(point);
+        //         }
+        //     }
+        // }
 
         /*if (Input.GetKey(KeyCode.Space))
         {
@@ -45,7 +43,7 @@ public class ConnectionManager : MonoBehaviour
         }*/
     }
 
-    private void HandleConnectorClick(ConnectorPoint point)
+    public void HandleConnectorClick(ConnectorPoint point)
     {
         if (selectedPoint == null)
         {
