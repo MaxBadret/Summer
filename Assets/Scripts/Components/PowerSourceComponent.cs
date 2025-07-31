@@ -50,5 +50,10 @@ public class PowerSourceComponent : BaseComponent
     //     ConnectInput(negative);
     // }
 
-    public float GetVoltage() => voltage;
+    public  float GetVoltage2() => voltage;
+
+    public void SetVoltage(float volt)
+    {
+        voltage = volt;
+    }
 }
