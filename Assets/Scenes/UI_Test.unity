@@ -3228,7 +3228,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2084180017}
         m_TargetAssemblyTypeName: ComponentsBar, Assembly-CSharp
-        m_MethodName: SpawmDiod
+        m_MethodName: SpawmLight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7542,7 +7542,7 @@ MonoBehaviour:
   amperPrefab: {fileID: 2735468556637300121, guid: 153af71d2b90b0e45a9628c56ce0d125, type: 3}
   voltPrefab: {fileID: 3790420892348554345, guid: ad96fe1a2e3fc454aad04f407063992c, type: 3}
   diodPrefab: {fileID: 5627329500937803493, guid: 90f84925101c80e489f776604069223a, type: 3}
-  lightPrefab: {fileID: 0}
+  lightPrefab: {fileID: 3297747243388554096, guid: c7520d691258e5c42a6f0181a4b83290, type: 3}
   spawnParent: {fileID: 1592952272}
   defaultSpawnPosition: {x: 0, y: 0, z: 0}
   confModeIm: {fileID: 1672611328}
