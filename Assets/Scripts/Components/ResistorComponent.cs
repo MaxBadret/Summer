@@ -18,7 +18,7 @@ public class ResistorComponent : BaseComponent
 
         outputSignal = new SignalData(outVoltage, input.Current);
 
-        Debug.Log($"[Resistor] Получено: {inV}В, {curr}А → Выход: {outV}В");
+        //Debug.Log($"[Resistor] Получено: {inV}В, {curr}А → Выход: {outV}В");
     }
 
     public void SetResistance(float res)

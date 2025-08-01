@@ -51,7 +51,7 @@ public class ResistorConfigurator : MonoBehaviour
     {
         FormatAndApplyInput();
 
-        if (targetResistor != null && float.TryParse(resistanceInput.text, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out float resistance))
+        if (targetResistor != null && float.TryParse(resistanceInput.text, out float resistance))
         {
             targetResistor.SetResistance(resistance);
         }
@@ -80,7 +80,7 @@ public class ResistorConfigurator : MonoBehaviour
             }
         }
 
-        // 2. Заменяем все запятые на точки
+        // 2. Заменяем все точки на запятые
         filtered = filtered.Replace('.', ',');
 
         // 3. Удаляем минусы (делаем число положительным)
