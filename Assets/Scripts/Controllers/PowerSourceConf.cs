@@ -11,6 +11,7 @@ public class PowerSourceConf : MonoBehaviour
 
     [SerializeField] TMP_InputField outVolt;
     [SerializeField] TMP_InputField outAmper;
+    [SerializeField] TMP_InputField totalResist;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,6 +32,7 @@ public class PowerSourceConf : MonoBehaviour
 
         outVolt.text = signal.Voltage.ToString("F4");
         outAmper.text = signal.Current.ToString("F4");
+        totalResist.text = CircuitManager.Instance.totRes.ToString("F4");
     }
 
     public void ApplyValue()

@@ -13,6 +13,8 @@ public class CircuitManager : MonoBehaviour
 
     public bool circuitValid = false;
 
+    public float totRes = 0;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -65,6 +67,7 @@ public class CircuitManager : MonoBehaviour
     private void SimulateCircuit(List<BaseComponent> path)
     {
         float totalResistance = CalculateTotalResistance(path);
+        totRes = totalResistance;
         totalResistance = Mathf.Round(totalResistance * 10000f) / 10000f;
         //Debug.Log($"🔍 Общее сопротивление: {totalResistance} Ом");
 
