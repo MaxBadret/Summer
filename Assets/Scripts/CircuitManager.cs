@@ -28,7 +28,7 @@ public class CircuitManager : MonoBehaviour
         // Только один раз на изменение схемы
         if (circuitChanged)
         {
-            Debug.Log("🔄 Схема изменилась, проверяем...");
+            //Debug.Log("🔄 Схема изменилась, проверяем...");
 
             List<BaseComponent> path = BuildPath(powerSource.PositiveOutput);
 
@@ -38,7 +38,7 @@ public class CircuitManager : MonoBehaviour
 
             if (!IsCircuitClosed(powerSource))
             {
-                Debug.Log("❌ Цепь не замкнута! Добавь соединения.");
+                //Debug.Log("❌ Цепь не замкнута! Добавь соединения.");
                 circuitValid = false;
                 return;
             }
@@ -46,7 +46,7 @@ public class CircuitManager : MonoBehaviour
             lastPath = path;
             circuitValid = true;
 
-            Debug.Log("✅ Цепь замкнута. Запуск симуляции.");
+            //Debug.Log("✅ Цепь замкнута. Запуск симуляции.");
         }
 
         // Постоянная симуляция — только если цепь валидна
@@ -66,11 +66,11 @@ public class CircuitManager : MonoBehaviour
     {
         float totalResistance = CalculateTotalResistance(path);
         totalResistance = Mathf.Round(totalResistance * 10000f) / 10000f;
-        Debug.Log($"🔍 Общее сопротивление: {totalResistance} Ом");
+        //Debug.Log($"🔍 Общее сопротивление: {totalResistance} Ом");
 
         float current = powerSource.GetVoltage() / totalResistance;
         current = Mathf.Round(current * 10000f) / 10000f;
-        Debug.Log($"⚡ Ток в цепи: {current} А");
+        //Debug.Log($"⚡ Ток в цепи: {current} А");
 
         SignalData signal = new SignalData(powerSource.GetVoltage(), current);
 

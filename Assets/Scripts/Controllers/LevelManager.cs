@@ -1,5 +1,6 @@
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -9,17 +10,23 @@ public class LevelManager : MonoBehaviour
     [Header("Требуемое выходное напряжение")]
     public float requiredVoltage = 5f;
 
+    [SerializeField] private string nextlevelName = "";
+    [SerializeField] private GameObject nextLevelButton;
+
     private string saveFilePath;
 
     private void Start()
     {
-        saveFilePath = Path.Combine(Application.persistentDataPath, "progress.json");
+        nextLevelButton.SetActive(false);
+        saveFilePath = Path.Combine(Application.persistentDataPath, "level_progress.json");
     }
 
     private void Update()
     {
         if (CheckWinCondition())
         {
+            //Debug.Log("Условия выполнены");
+            nextLevelButton.SetActive(true);
             MarkLevelCompleted();
             enabled = false; // Выключаем LevelManager после выполнения
         }
@@ -39,7 +46,7 @@ public class LevelManager : MonoBehaviour
     {
         if (!File.Exists(saveFilePath))
         {
-            //Debug.LogWarning("❌ Файл прогресса не найден.");
+            Debug.LogWarning("❌ Файл прогресса не найден.");
             return;
         }
 
@@ -54,7 +61,7 @@ public class LevelManager : MonoBehaviour
                 if (entry.completed == 0) // Если ещё не пройден
                 {
                     entry.completed = 1; // Помечаем как пройденный
-                    //Debug.Log($"✅ Уровень \"{levelName}\" пройден!");
+                    Debug.Log($"✅ Уровень \"{levelName}\" пройден!");
                 }
                 found = true;
                 break;
@@ -63,11 +70,16 @@ public class LevelManager : MonoBehaviour
 
         if (!found)
         {
-            //Debug.LogWarning($"⚠️ Уровень \"{levelName}\" не найден в json.");
+            Debug.LogWarning($"⚠️ Уровень \"{levelName}\" не найден в json.");
             return;
         }
 
         string updatedJson = JsonUtility.ToJson(data, true);
         File.WriteAllText(saveFilePath, updatedJson);
+    }
+
+    private void LoadNextLevel()
+    {
+        SceneManager.LoadScene(nextlevelName);
     }
 }
