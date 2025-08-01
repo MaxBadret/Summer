@@ -8,11 +8,29 @@ public class PowerSourceConf : MonoBehaviour
 
     [SerializeField] PowerSourceComponent pwSource;
     [SerializeField] TMP_InputField inpField;
+
+    [SerializeField] TMP_InputField outVolt;
+    [SerializeField] TMP_InputField outAmper;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Instance = this;
         inpField.text = pwSource.GetVoltage2().ToString("F4");
+    }
+
+    void Update()
+    {
+        if (CircuitManager.Instance == null)
+            return;
+
+        var last = CircuitManager.Instance.GetLastComponent();
+        if (last == null)
+            return;
+
+        SignalData signal = last.GetOutputSignal();
+
+        outVolt.text = signal.Voltage.ToString("F4");
+        outAmper.text = signal.Current.ToString("F4");
     }
 
     public void ApplyValue()
@@ -55,5 +73,27 @@ public class PowerSourceConf : MonoBehaviour
 
         // 5. Обновляем текст в поле
         inpField.text = filtered;
+    }
+
+    private float GetOutVoltage()
+    {
+        // 🔌 Проверка выхода схемы на нужное напряжение
+        var last = CircuitManager.Instance.GetLastComponent();
+        if (last == null)
+            return 0;
+        SignalData signal = last.GetOutputSignal();
+
+        return signal.Voltage;
+    }
+
+    private float GetOutAmper()
+    {
+        // 🔌 Проверка выхода схемы на нужное напряжение
+        var last = CircuitManager.Instance.GetLastComponent();
+        if (last == null)
+            return 0;
+        SignalData signal = last.GetOutputSignal();
+
+        return signal.Current;
     }
 }
