@@ -1622,7 +1622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelName: 1
-  requiredVoltage: 0.12
+  requiredVoltage: 2
   nextlevelName: 2
   nextLevelButton: {fileID: 1237965539}
 --- !u!1 &392767256
