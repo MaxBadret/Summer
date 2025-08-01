@@ -31,6 +31,11 @@ public class MouseManager : MonoBehaviour
                 HandleLeftClick();
             }
         }
+
+        if (mode != MouseMode.Config)
+        {
+            ResistorConfigurator.Instance.CloseConfig();
+        }
         
     }
 
