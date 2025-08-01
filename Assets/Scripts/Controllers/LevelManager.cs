@@ -39,7 +39,7 @@ public class LevelManager : MonoBehaviour
         if (last == null) return false;
 
         SignalData signal = last.GetOutputSignal();
-        return Mathf.Abs(signal.Voltage - requiredVoltage) < 0.01f;
+        return Mathf.Abs(signal.Voltage - requiredVoltage) < 0.2f;
     }
 
     private void MarkLevelCompleted()
