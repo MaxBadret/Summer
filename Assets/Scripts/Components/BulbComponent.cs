@@ -33,6 +33,10 @@ public class BulbComponent : BaseComponent
         {
             spriteRenderer.sprite = onSprite;
         }
+        else
+        {
+            spriteRenderer.sprite = offSprite;
+        }
 
         outputSignal = input; // Пропускаем сигнал без изменений
     }
