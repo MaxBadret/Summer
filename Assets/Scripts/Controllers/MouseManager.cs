@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class MouseManager : MonoBehaviour
 {
+    public static MouseManager Instance;
     public enum MouseMode { Config, Set, Wire }
 
     public MouseMode mode = MouseMode.Set;
@@ -13,7 +14,7 @@ public class MouseManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        Instance = this;
     }
 
     // Update is called once per frame
@@ -36,7 +37,7 @@ public class MouseManager : MonoBehaviour
         {
             ResistorConfigurator.Instance.CloseConfig();
         }
-        
+
     }
 
     private void HandleRightClick()

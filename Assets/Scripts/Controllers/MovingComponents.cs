@@ -12,6 +12,10 @@ public class MovingComponents : MonoBehaviour
 
     private bool boundsInitialized = false;
 
+    [SerializeField] GameObject circle1;
+
+    [SerializeField] GameObject circle2;
+
     void Start()
     {
         //Поиск RectTransform с названием "MoveArea"
@@ -43,6 +47,15 @@ public class MovingComponents : MonoBehaviour
 
             transform.position = mousePos;
         }
+
+        if (MouseManager.Instance.mode == MouseManager.MouseMode.Wire)
+        {
+            CircleSetActiv(true);
+        }
+        else
+        {
+            CircleSetActiv(false);
+        }
     }
 
     public void OnLeftClick()
@@ -65,5 +78,11 @@ public class MovingComponents : MonoBehaviour
         maxWorldPos = corners[2];
 
         boundsInitialized = true;
+    }
+
+    public void CircleSetActiv(bool isActriv)
+    {
+        circle1.SetActive(isActriv);
+        circle2.SetActive(isActriv);
     }
 }

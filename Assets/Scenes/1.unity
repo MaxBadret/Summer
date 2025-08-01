@@ -4256,6 +4256,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7595b3e729580045ad60963c34a8b69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  circle1: {fileID: 1499339870}
+  circle2: {fileID: 1499339870}
 --- !u!136 &1344285866
 CapsuleCollider:
   m_ObjectHideFlags: 0
