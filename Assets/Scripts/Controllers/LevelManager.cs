@@ -78,7 +78,7 @@ public class LevelManager : MonoBehaviour
         File.WriteAllText(saveFilePath, updatedJson);
     }
 
-    private void LoadNextLevel()
+    public void LoadNextLevel()
     {
         SceneManager.LoadScene(nextlevelName);
     }
