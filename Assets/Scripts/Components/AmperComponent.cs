@@ -11,7 +11,7 @@ public class AmperComponent : BaseComponent
         inputSignal = input;
         current = input.Current;
         UpdateDisplay();
-        Debug.Log($"Прошел через амперметр");
+        //Debug.Log($"Прошел через амперметр");
         // Пропускаем сигнал дальше без изменений
         outputSignal = new SignalData(input.Voltage, input.Current);
     }
